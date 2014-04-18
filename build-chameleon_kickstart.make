@@ -5,7 +5,7 @@ includes[] = drupal-org-core.make
 ; Profile =====================================================================
 projects[chameleon_kickstart][type] = "profile"
 projects[chameleon_kickstart][download][type] = "git"
-projects[chameleon_kickstart][download][url] = "git@github.com:katbailey/personalize-behat-tests.git"
+projects[chameleon_kickstart][download][url] = "https://github.com/katbailey/personalize-behat-tests.git"
 
 ; Modules =====================================================================
 
