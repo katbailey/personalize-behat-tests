@@ -14,7 +14,7 @@ Feature: Acquia Lift
     | other-param   | some-fascinating-value,another-fascinating-value  |
     And personalized elements:
     | label                     | agent           | selector                | type        | content         | stateful  | targeting   |
-    | Personalized node title   | targeting-agent | a[title="Test article"] | replaceText | ohai,wtf,blarg  | 0         | some-param  |
+    | Personalized node title   | targeting-agent | a[title="Test article"] | replaceHtml | ohai,wtf,blarg  | 0         | some-param  |
     And campaign goals:
     | machine_name       | label              | plugin  | event   | identifier                | client_side   | agent       | value |
     | clicks-second-node | Second node click  | link    | click   | a[title="Second article"] | 1             | test-agent  | 2     |
