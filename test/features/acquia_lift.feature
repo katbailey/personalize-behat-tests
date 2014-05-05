@@ -23,14 +23,19 @@ Feature: Acquia Lift
   @api @javascript
   Scenario: Use Acquia Lift Preview Controls
     Given I am logged in as a user with the "administrator" role
+    And print last response
     And I am on "/"
     Then I should see "Test article"
     When I click "toolbar-link-admin-acquia_lift"
     And I wait for the Acquia Lift controls box to appear
-    When I click "My Test Agent"
+    When I click "All campaigns"
+    And I click "My Test Agent"
+    And I click "Goals"
     And I wait for the option controls to appear
     Then I should see "Second node click"
-    When I click "Targeting Agent"
+    When I click "All campaigns"
+    And I click "Targeting Agent"
+    And I click "Content variations"
     And I wait for the option controls to appear
     And I click "Preview Option A"
     Then I should see "ohai"
