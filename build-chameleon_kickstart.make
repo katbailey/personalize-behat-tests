@@ -13,8 +13,8 @@ projects[chameleon_kickstart][download][url] = "https://github.com/katbailey/per
 ; ---------------------------------------
 projects[personalize][type] = "module"
 projects[personalize][download][type] = "git"
-projects[personalize][download][url] = "https://github.com/acquia/personalize_module.git"
-projects[personalize][download][branch] = "CH-432"
+projects[personalize][download][url] = "http://git.drupal.org/project/personalize.git"
+projects[personalize][download][branch] = "7.x-1.x"
 projects[personalize][subdir] = contrib
 
 ; Contrib module: visitor_actions
