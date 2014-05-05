@@ -9,9 +9,9 @@ Feature: Acquia Lift
     | machine_name        | label           | url_contexts    |
     | targeting-agent     | Targeting Agent | some-param      |
     And URL context configuration:
-    | name          | values                                            |
-    | some-param    | first-value,second-value,third-value              |
-    | other-param   | some-fascinating-value,another-fascinating-value  |
+    | name          | value type     |
+    | some-param    | string         |
+    | other-param   | string         |
     And personalized elements:
     | label                     | agent           | selector                | type        | content         | stateful  | targeting   |
     | Personalized node title   | targeting-agent | a[title="Test article"] | replaceHtml | ohai,wtf,blarg  | 0         | some-param  |

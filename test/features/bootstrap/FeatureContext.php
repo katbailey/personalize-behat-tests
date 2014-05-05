@@ -91,7 +91,7 @@ class FeatureContext extends DrupalContext
   public function createURLContextConfig(TableNode $config) {
     $contexts = array();
     foreach ($config->getHash() as $configHash) {
-      $contexts[$configHash['name']] = explode(',', $configHash['values']);
+      $contexts[] = $configHash['name'];
     }
     variable_set('personalize_url_querystring_contexts', $contexts);
   }
@@ -114,8 +114,8 @@ class FeatureContext extends DrupalContext
       // Grab explicit targeting values if specified.
       if (!empty($option_set->targeting)) {
         $contexts = variable_get('personalize_url_querystring_contexts', array());
-        if (isset($contexts[$option_set->targeting])) {
-          foreach ($contexts[$option_set->targeting] as $value) {
+        if (in_array($option_set->targeting, $contexts)) {
+          foreach (array('first-value', 'second-value', 'third-value') as $value) {
             $context_values[] = $option_set->targeting . '::' . $value;
           }
         }
