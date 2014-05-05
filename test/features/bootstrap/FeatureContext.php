@@ -216,7 +216,7 @@ class FeatureContext extends DrupalContext
    * @When /^I wait for the page to load$/
    */
   public function waitForPageToLoad() {
-    $this->getSession()->wait(10000, '0 === jQuery.active');
+    $this->getSession()->wait(10000, 'typeof jQuery === "function" && 0 === jQuery.active');
   }
 
   /**
