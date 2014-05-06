@@ -1,6 +1,9 @@
 default:
   paths:
     features: test/features
+  context:
+    parameters:
+      debug           : true
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~

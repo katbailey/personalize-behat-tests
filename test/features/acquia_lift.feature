@@ -66,6 +66,7 @@ Feature: Acquia Lift
     Then I should see "blarg"
     And I should not see "wtf"
     And I should not see "ohai"
+    Then print last response
 
   @api @javascript
   Scenario: Send client-side goals
