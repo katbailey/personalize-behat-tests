@@ -41,12 +41,17 @@ Feature: Acquia Lift
     Then I should see "blarg"
     And I should not see "wtf"
     And I should not see "ohai"
+
+  @api @javascript
+  Scenario: View User page
+    Given I am not logged in
+    And I am on "/user"
+    Then I should see "Username"
     Then print last response
 
   @api @javascript
   Scenario: Use Acquia Lift Preview Controls
     Given I am logged in as a user with the "administrator" role
-    Then print last response
     And I am on "/"
     Then I should see "Test article"
     When I click "toolbar-link-admin-acquia_lift"
