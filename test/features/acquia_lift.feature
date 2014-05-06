@@ -20,31 +20,6 @@ Feature: Acquia Lift
     | clicks-second-node | Second node click  | link    | click   | a[title="Second article"] | 1             | test-agent  | 2     |
     And visitor context caching is enabled
 
-  @api @javascript
-  Scenario: Use Acquia Lift Preview Controls
-    Given I am logged in as a user with the "administrator" role
-    And print last response
-    And I am on "/"
-    Then I should see "Test article"
-    When I click "toolbar-link-admin-acquia_lift"
-    And I wait for the Acquia Lift controls box to appear
-    When I click "All campaigns"
-    And I click "My Test Agent"
-    And I click "Goals"
-    And I wait for the option controls to appear
-    Then I should see "Second node click"
-    When I click "All campaigns"
-    And I click "Targeting Agent"
-    And I click "Content variations"
-    And I wait for the option controls to appear
-    And I click "Preview Option A"
-    Then I should see "ohai"
-    When I click "Preview Option B"
-    Then I should see "wtf"
-    When I click "Preview Option C"
-    Then I should see "blarg"
-    When I click "Preview Control Option"
-    Then I should see "Test article"
 
   @api @javascript
   Scenario: View Targeted Content
@@ -67,6 +42,33 @@ Feature: Acquia Lift
     And I should not see "wtf"
     And I should not see "ohai"
     Then print last response
+
+  @api @javascript
+  Scenario: Use Acquia Lift Preview Controls
+    Given I am logged in as a user with the "administrator" role
+    Then print last response
+    And I am on "/"
+    Then I should see "Test article"
+    When I click "toolbar-link-admin-acquia_lift"
+    And I wait for the Acquia Lift controls box to appear
+    When I click "All campaigns"
+    And I click "My Test Agent"
+    And I click "Goals"
+    And I wait for the option controls to appear
+    Then I should see "Second node click"
+    When I click "All campaigns"
+    And I click "Targeting Agent"
+    And I click "Content variations"
+    And I wait for the option controls to appear
+    And I click "Preview Option A"
+    Then I should see "ohai"
+    When I click "Preview Option B"
+    Then I should see "wtf"
+    When I click "Preview Option C"
+    Then I should see "blarg"
+    When I click "Preview Control Option"
+    Then I should see "Test article"
+
 
   @api @javascript
   Scenario: Send client-side goals
