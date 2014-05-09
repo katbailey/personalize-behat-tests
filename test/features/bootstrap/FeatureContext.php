@@ -189,6 +189,15 @@ class FeatureContext extends DrupalContext
   }
 
   /**
+   * Wait either $duration milliseconds or until jQuery: is undefined or has no active ajax calls AND has no active animations
+   *
+   * @param int $duration
+   */
+  protected function jqueryWait($duration = 1000) {
+    $this->getSession()->wait($duration, '(typeof jQuery === \'undefined\' || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
+  }
+
+  /**
    * @Then /^there should be (\d+) "([^"]*)" goals for agent "([^"]*)"$/
    */
   public function assertNumGoalsForAgent($num, $goal_name, $agent_name) {
@@ -216,7 +225,7 @@ class FeatureContext extends DrupalContext
    * @When /^I wait for the page to load$/
    */
   public function waitForPageToLoad() {
-    $this->getSession()->wait(10000, 'jQuery != undefined && 0 === jQuery.active');
+    $this->jqueryWait(10000);
   }
 
   /**
